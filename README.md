@@ -1,13 +1,15 @@
-TelegramBotApiBundle
+LongmanTelegramBotApiBundle
 ===================
-A symfony wrapper bundle for  [Telegram Bot API](https://core.telegram.org/bots/api).
+This is a fork, the original package is located at [borsaco/TelegramBotApiBundle](https://github.com/borsaco/TelegramBotApiBundle)
+
+A symfony wrapper bundle for  [PHP Telegram Bot](https://github.com/php-telegram-bot/core).
 
 ## Install
 
 Via Composer
 
 ``` bash
-composer require borsaco/telegram-bot-api-bundle
+composer require kprokgb/longman-telegram-bot-api-bundle
 ```
 
 ## Configure the bundle

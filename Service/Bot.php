@@ -1,8 +1,8 @@
 <?php
 
-namespace Borsaco\TelegramBotApiBundle\Service;
+namespace KproKGB\LongmanTelegramBotApiBundle\Service;
 
-use Borsaco\TelegramBotApiBundle\DependencyInjection\Factory\BotFactory;
+use KproKGB\LongmanTelegramBotApiBundle\DependencyInjection\Factory\BotFactory;
 use Symfony\Component\DependencyInjection\ContainerInterface;
 
 class Bot

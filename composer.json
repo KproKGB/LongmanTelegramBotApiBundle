@@ -1,26 +1,25 @@
 {
-  "name": "borsaco/telegram-bot-api-bundle",
+  "name": "kprokgb/longman-telegram-bot-api-bundle",
   "type": "symfony-bundle",
-  "description": "A simple wrapper for telegram-bot-api.",
+  "description": "A simple wrapper for longman telegram bot.",
   "keywords": ["telegram", "bot", "api", "telegram-bot-api", "php", "symfony"],
-  "homepage": "https://borsaco.ir",
   "minimum-stability": "dev",
   "prefer-stable": true,
-  "version": "1.0.4",
+  "version": "0.1",
   "license": "BSD-3-Clause",
   "authors": [
     {
-      "name": "Alireza Seddighi",
-      "email": "seddighi@borsaco.ir",
+      "name": "Kpro KGB",
+      "email": "pchelper13@gmail.com",
       "role": "Developer"
     }
   ],
   "require": {
     "php": ">=7.1",
     "symfony/framework-bundle": "^3.4|^4.1.12|^5.0",
-    "irazasyed/telegram-bot-sdk": "^3.0"
+    "longman/telegram-bot": "*"
   },
   "autoload": {
-    "psr-4": { "Borsaco\\TelegramBotApiBundle\\": "" }
+    "psr-4": { "KproKGB\\LongmanTelegramBotApiBundle\\": "" }
   }
 }

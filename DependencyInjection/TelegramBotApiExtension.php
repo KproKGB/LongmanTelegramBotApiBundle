@@ -1,15 +1,11 @@
 <?php
 
-namespace Borsaco\TelegramBotApiBundle\DependencyInjection;
+namespace KproKGB\LongmanTelegramBotApiBundle\DependencyInjection;
 
-use Borsaco\TelegramBotApiBundle\DependencyInjection\Factory\BotFactory;
-use Symfony\Component\Config\Definition\Exception\InvalidConfigurationException;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
 use Symfony\Component\Config\FileLocator;
 use Symfony\Component\HttpKernel\DependencyInjection\Extension;
 use Symfony\Component\DependencyInjection\Loader;
-use Symfony\Component\DependencyInjection\Reference;
-use Telegram\Bot\Api;
 
 class TelegramBotApiExtension extends Extension
 {

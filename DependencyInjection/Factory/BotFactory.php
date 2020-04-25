@@ -1,27 +1,35 @@
 <?php
 
-namespace Borsaco\TelegramBotApiBundle\DependencyInjection\Factory;
+namespace KproKGB\LongmanTelegramBotApiBundle\DependencyInjection\Factory;
 
-use GuzzleHttp\Client;
-use Symfony\Component\DependencyInjection\ContainerBuilder;
-use Telegram\Bot\Api;
-use Telegram\Bot\HttpClients\GuzzleHttpClient;
+use Longman\TelegramBot\Exception\TelegramException;
+use Longman\TelegramBot\Telegram;
 
 class BotFactory
 {
+    /**
+     * @param array $config
+     * @param string $name
+     * @return Telegram
+     */
     public function create(array $config = [], string $name)
     {
-        $bot = new Api($config['bots'][$name]['token']);
+        try {
+            // Create Telegram API object
+            $telegram = new Telegram($config['bots'][$name]['token'], $name);
 
-        if($config['proxy']) {
-            $client = new GuzzleHttpClient(new Client(['proxy' => $config['proxy']]));
-            $bot->setHttpClientHandler($client);
+            // Set webhook
+            if ($config['hook_url']) {
+                $result = $telegram->setWebhook($config['hook_url']);
+                if (!$result->isOk()) {
+                    throw new TelegramException($result->getDescription());
+                }
+            }
+        } catch (TelegramException $e) {
+            // log telegram errors
+            // echo $e->getMessage();
         }
 
-        if($config['async_requests']) {
-            $bot->setAsyncRequest($config['async_requests']);
-        }
-
-        return $bot;
+        return $telegram;
     }
 }
