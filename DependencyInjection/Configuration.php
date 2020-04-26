@@ -12,7 +12,7 @@ class Configuration implements ConfigurationInterface
      */
     public function getConfigTreeBuilder()
     {
-        $builder = new TreeBuilder('telegram_bot_api');
+        $builder = new TreeBuilder('longman_telegram_bot_api');
         $rootNode = $builder->getRootNode();
 
         $rootNode

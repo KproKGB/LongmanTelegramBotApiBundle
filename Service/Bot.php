@@ -11,7 +11,7 @@ class Bot
 
     public function __construct(ContainerInterface $container)
     {
-        $this->config = $container->getParameter('telegram_bot_api.config');
+        $this->config = $container->getParameter('longman_telegram_bot_api.config');
     }
 
     public function getBot($name = null)
