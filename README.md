@@ -19,7 +19,7 @@ This bundle was designed to just work out of the box. The only thing you have to
 ```yaml
 # config/packages/telegram.yaml
 
-telegram_bot_api:
+longman_telegram_bot_api:
     # Proxy (optional) :
     #proxy: 'socks5h://127.0.0.1:5090' # this is example you have to change this
     #async_requests: false
@@ -40,12 +40,16 @@ telegram_bot_api:
         first:
             # Your bot token: (required)
             token: 123456789:ABCD1234****4321CBA
+            without_db: false
+            hook_url:
         second:
             # Your bot token: (required)
             token: 123456789:ABCD1234****4321CBA
+            without_db: false
+            hook_url:
     
     # The default bot returned when you call getBot()
-    default: 'second' 
+    default: 'first' 
 ```
 
 ## Usage

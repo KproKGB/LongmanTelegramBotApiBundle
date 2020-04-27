@@ -15,19 +15,21 @@ class BotFactory
     public function create(array $config = [], string $name)
     {
         try {
+            $botConfig = $config['bots'][$name];
+
             // Create Telegram API object
-            $telegram = new Telegram($config['bots'][$name]['token'], $name);
+            $telegram = new Telegram($botConfig['token'], $name);
+            $telegram->useGetUpdatesWithoutDatabase($botConfig['without_db']);
 
             // Set webhook
-            if ($config['hook_url']) {
-                $result = $telegram->setWebhook($config['hook_url']);
+            if ($botConfig['hook_url']) {
+                $result = $telegram->setWebhook($botConfig['hook_url']);
                 if (!$result->isOk()) {
                     throw new TelegramException($result->getDescription());
                 }
             }
         } catch (TelegramException $e) {
-            // log telegram errors
-            // echo $e->getMessage();
+            throw new \RuntimeException($e);
         }
 
         return $telegram;
